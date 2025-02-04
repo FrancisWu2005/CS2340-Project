@@ -127,3 +127,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_DIRS = [BASE_DIR / 'moviesstore/static/']
 
+MEDIA_ROOT = os.path.join('media', 'movie_images')
+MEDIA_URL = '/media/'
+
