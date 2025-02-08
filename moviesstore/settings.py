@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
 import os
 from pathlib import Path
 
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-my53c!9!5jh-6dh7-r^6r=b4nc+tz9de88p@kz_st3gu+v=bv&'
+SECRET_KEY = 'django-insecure-*dks&giea7b16l*ms9fib96q1ob1any$nhej)u(t3p3%p35@4d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'movies',
-    'accounts'
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +57,8 @@ ROOT_URLCONF = 'moviesstore.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'moviesstore/templates')],
+        'DIRS': [os.path.join(BASE_DIR,
+                              'moviesstore/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,9 +125,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_DIRS = [
+    BASE_DIR / 'moviesstore/static/',
+]
 
-STATICFILES_DIRS = [BASE_DIR / 'moviesstore/static/']
-
-MEDIA_ROOT = os.path.join('media', 'movie_images')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
